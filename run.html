@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function email_validation() {
+            var x = document.myform.email.value;
+            var atposition = x.indexOf("@");
+            var doposition = x.lastIndexOf(".");
+
+            if (atposition < 1 || doposition < atposition + 2 || doposition + 2 >= x.length) {
+                alert("Please enter a valid e-mail address \n atposition: " + atposition + "\n doposition: " + doposition);
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="myform" method="post" action="#" onsubmit="return email_validation();">
+        Email: <input type="text" required placeholder="Enter your Email" name="email"><br>
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
